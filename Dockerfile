@@ -10,4 +10,7 @@ RUN make install
 
 RUN mkdir /output
 
-ENTRYPOINT ["cp", "-r", "/var/www/htdocs/cgit", "/output"]
+COPY export.sh .
+RUN chmod +x export.sh
+
+ENTRYPOINT ["./export.sh"]
