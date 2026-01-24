@@ -1,0 +1,3 @@
+[submodule "cgit"]
+	path = cgit
+	url = https://git.zx2c4.com/cgit
