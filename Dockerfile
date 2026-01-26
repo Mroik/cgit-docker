@@ -11,12 +11,13 @@ RUN make install
 
 FROM alpine:3.23.2
 
-RUN apk add fcgiwrap luajit python3 py3-markdown gcompat
+RUN apk add fcgiwrap luajit python3 py3-markdown gcompat patchelf
 RUN mkdir /cgit
 RUN mkdir /cgit/www
 RUN mkdir /cgit/filters
 WORKDIR /cgit
 COPY --from=builder /var/www/htdocs/cgit /cgit/www
 COPY --from=builder /usr/local/lib/cgit/filters /cgit/filters
+RUN patchelf --add-needed libgcompat.so.0 /cgit/www/cgit.cgi
 
 ENTRYPOINT ["fcgiwrap", "-s", "unix:/stuff/fcgi.sock"]
