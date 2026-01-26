@@ -1,3 +1,7 @@
+> [!WARNING]
+> Note that I do NOT use every single feature of cgit. Some dependencies
+> required for some filters might be missing.
+
 Before building you need to download the `cgit` source code. There's already a
 reference to it as a submodule. To download just run `git submodule update
 --init --recursive`.
