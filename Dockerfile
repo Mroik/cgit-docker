@@ -9,9 +9,9 @@ RUN make LUA_PKGCONFIG=luajit
 RUN make install
 
 
-FROM debian:13.3-slim
+FROM alpine:3.23.2
 
-RUN apt update && apt install -y fcgiwrap libluajit-5.1-2 luajit python3 python3-markdown
+RUN apk add fcgiwrap luajit python3 py3-markdown gcompat
 RUN mkdir /cgit
 RUN mkdir /cgit/www
 RUN mkdir /cgit/filters
