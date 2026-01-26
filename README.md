@@ -6,6 +6,9 @@ Before building you need to download the `cgit` source code. There's already a
 reference to it as a submodule. To download just run `git submodule update
 --init --recursive`.
 
+If you don't want to build from source you can just use the image provided
+though `ghcr`: e.g. ghcr.io/mroik/cgit-docker:cgit-v1.2.3
+
 After running the container you just configure your webserver to use the exposed
 unix socket (`./stuff/fcgi.sock`) with `fastcgi`.
 
