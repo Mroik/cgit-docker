@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    volumes:
+      - ./stuff:/stuff
+      - ./cgitrc:/etc/cgitrc
+      - /opt/cgit_repos:/repos:ro
+    networks:
+      webapps:
+        aliases:
+          - fastcgi
+
+networks:
+  webapps:
+    external: true

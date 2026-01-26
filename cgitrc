@@ -1,0 +1,24 @@
+#
+# cgit config
+#
+
+# The defaults
+css=/static/cgit.css
+logo=/static/cgit.png
+
+# Allow http transport git clone
+enable-http-clone=1
+
+# if you do not want that webcrawler (like google) index your site
+robots=noindex, nofollow
+
+# if cgit messes up links, use a virtual-root. For example, cgit.example.org/ has this value:
+#virtual-root=/
+
+readme=:README.md
+about-filter=/cgit/filters/about-formatting.sh
+enable-index-links=1
+enable-commit-graph=1
+
+scan-path=/repos
+root-readme=/cgit/www/about.md
