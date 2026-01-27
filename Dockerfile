@@ -11,7 +11,7 @@ RUN make install
 
 FROM alpine:3.23.2
 
-RUN apk add fcgiwrap luajit python3 py3-markdown gcompat patchelf
+RUN apk add fcgiwrap luajit python3 py3-markdown gcompat patchelf musl-dev
 RUN mkdir /cgit
 RUN mkdir /cgit/www
 RUN mkdir /cgit/filters
